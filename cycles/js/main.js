@@ -53,18 +53,36 @@
 // 7. Створити калькулятор який буде зациклений. Запитати у юзера 2 числа та знак , 
 //    провести математичну операцію, далі вивести результат і спитатись чи хоче юзер повторити?
 
-let num1 = +prompt('Введіть число');
+let confirmation = true;
 
-let num2 = +prompt('Введіть друге число');
+if (confirmation) {
 
-let sign = +prompt('Введіть знак математичної операції');
+	 while(confirmation) {
 
-let confirmation = confirm('Бажаєте повторити?');
+		let num1 = +prompt('Введіть число');
 
-let result = "${num1} ${sign} ${num2}";
+		let num2 = +prompt('Введіть друге число');
 
-// while(confirmation == true) {
+		let sign = prompt('Введіть знак математичної операції');
+
+		switch(sign) {
+			case "+": alert(num1 + num2);
+			break;
+
+			case "*": alert(num1 * num2);
+			break;
+
+			case "/": alert(num1 / num2);
+			break;
+
+			case "-": alert(num1 - num2);
+			break;
+		}	
+
+		confirmation = confirm('Бажаєте повторити?');
+		
+	}
 	
-	
-// 	break;
-// }
+} else {
+	confirmation == false;
+}
